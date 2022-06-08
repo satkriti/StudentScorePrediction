@@ -47,6 +47,6 @@ MAPE(predictedScore, testingdata$Scores)
 #I have used filter function(part of dply package) to find out the predicted score if student studies for more than 9.2 hours
 code: a = filter(testingdata, Hours >= 9.0 )$PredScores
 
-The code is build in R, the data used is savied as a csv file named 'studentscore.csv'.
+The code is build in R, the data used is saved as a csv file named 'studentscore.csv'.
 
 
