@@ -25,19 +25,18 @@ So, we can split the data based on resultant variable (Scores) into two set - us
 code: 
 
 sample = sample.split(s_data$Scores, SplitRatio = 0.70)
+
 trainingdata = subset(s_data, sample == 'TRUE')
+
 testingdata = subset(s_data, sample =='FALSE')
 
 I have used linear regression to create the model using - lm(DV~IV, data = yourtrainingdatasetName)
-
 code: percentageModel = lm(Scores~. , data = trainingdata)
 
 Then, I've predicted the model using test set
-
 code: predictedScore = predict(percentageModel, testingdata_new)
 
 Now I've added this predictedScore value in Testingdata
-
 code: testingdata$PredScores = predictedScore
 
 Though it wasn't implicitly required I have tested my models using MAE(Mean Absolute Error) and MAPE(Mean Absolute Percentage Error)
@@ -46,6 +45,7 @@ Lower the MAE, the better is the model. My MAE = 4.5
 MAPE less than .05 - acceptably accurate.  (.10 < MAPE < .25 indicates low, but acceptable accuracy. MAPE>.25 is unacceptable) My MAPE = 0.08
 
 code: 
+
 MAE(predictedScore, testingdata$Scores) 
 
 MAPE(predictedScore, testingdata$Scores)
