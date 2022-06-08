@@ -31,6 +31,7 @@ trainingdata = subset(s_data, sample == 'TRUE')
 testingdata = subset(s_data, sample =='FALSE')
 
 I have used linear regression to create the model using syntax -  lm(DV~IV, data = yourtrainingdatasetName)
+
 code: percentageModel = lm(Scores~Hours , data = trainingdata)
 
 Then, I've predicted the model using test set
