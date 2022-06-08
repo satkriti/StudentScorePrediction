@@ -10,9 +10,6 @@ str(s_data)
 #no missing vals
 apply(s_data, 2, function(x) sum(is.na(x)))
 
-#prop.table(table(s_data$Scores))  ///////no imbalance
-#prop.table(table(s_data$Hours))   ///////no imbalance
-
 summary(s_data)
 
 #understanding:score is the DV/RV and hours is independent
