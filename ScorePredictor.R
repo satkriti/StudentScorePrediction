@@ -51,6 +51,6 @@ MAPE(predictedScore, testingdata$Scores)
 
 #ANSWER FOR Q2: WHAT IS PREDICTED SCORE IF STUDENT STUDIES 9.25 HOURS PER DAY
 library(dplyr)
-a = filter(testingdata, Hours >= 9.2 )$PredScores
+a = filter(testingdata, Hours == 9.2 )$PredScores
 a #so when hours = 9.2, predicted score = 91.61
 
