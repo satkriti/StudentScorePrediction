@@ -47,9 +47,11 @@ MAPE less than .05 - acceptably accurate.  (.10 < MAPE < .25 indicates low, but 
 
 code: 
 MAE(predictedScore, testingdata$Scores) 
+
 MAPE(predictedScore, testingdata$Scores)
 
 #I have used filter function(part of dply package) to find out the predicted score if student studies for more than 9.2 hours
+
 code: a = filter(testingdata, Hours >= 9.0 )$PredScores
 
 
