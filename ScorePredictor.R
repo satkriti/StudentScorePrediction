@@ -42,7 +42,8 @@ checkTable = cbind(Actual = testingdata$Scores, Predicted = predictedScore)
 #add this predictedScore value in Testingdata
 testingdata$PredScores = predictedScore
 
-#now check(validate) the difference through MAE(Mean absolute error)
+
+#Evaluating the model through MAE and MAPE
 MAE(predictedScore, testingdata$Scores) 
 MAPE(predictedScore, testingdata$Scores) 
 
@@ -50,6 +51,6 @@ MAPE(predictedScore, testingdata$Scores)
 
 #ANSWER FOR Q2: WHAT IS PREDICTED SCORE IF STUDENT STUDIES 9.25 HOURS PER DAY
 library(dplyr)
-a = filter(testingdata, Hours >= 9.0 )$PredScores
-a
+a = filter(testingdata, Hours >= 9.2 )$PredScores
+a #so when hours = 9.2, predicted score = 91.61
 
