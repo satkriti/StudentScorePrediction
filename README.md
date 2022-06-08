@@ -39,9 +39,10 @@ code: predictedScore = predict(percentageModel, testingdata_new)
 Now I've added this predictedScore value in Testingdata
 code: testingdata$PredScores = predictedScore
 
-Though it wasn't implicitly required I have tested my models using MAE(Mean Absolute Error) and MAPE(Mean Absolute Percentage Error)
+Now it's cruicial that we validate our models.
+I have tested my models using MAE(Mean Absolute Error) and MAPE(Mean Absolute Percentage Error)
 
-Lower the MAE, the better is the model. My MAE = 4.5
+Lower the MAE, the better is the model. My MAE score = 4.5
 MAPE less than .05 - acceptably accurate.  (.10 < MAPE < .25 indicates low, but acceptable accuracy. MAPE>.25 is unacceptable) My MAPE = 0.08
 
 code: 
@@ -50,9 +51,9 @@ MAE(predictedScore, testingdata$Scores)
 
 MAPE(predictedScore, testingdata$Scores)
 
-#I have used filter function(part of dply package) to find out the predicted score if student studies for more than 9.2 hours
+#I have used filter function(part of dplyr package) to find out the predicted score if student studies for 9.2 hours
 
-code: a = filter(testingdata, Hours >= 9.0 )$PredScores
+code: a = filter(testingdata, Hours == 9.2 )$PredScores
 
 
 The code is build in R, the data used is saved as a csv file named 'studentscore.csv'.
